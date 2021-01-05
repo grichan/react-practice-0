@@ -1,0 +1,35 @@
+body {
+    background-color: white;
+}
+
+#nav-main-box {
+    display: flex;
+    // background-color: red;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom: 1px black solid;
+    background-color: whitesmoke;
+}
+
+#nav-hamburger {
+
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.555);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    li {
+        margin: 0;
+        padding: 1em;
+    }
+}
