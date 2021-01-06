@@ -9,10 +9,14 @@ function Navigation() {
     let menu
     
     if (showMenu) {
-        menu = 
-        <ul id='nav-list'>
-            <li>Home</li>
-        </ul>
+        menu =
+        <div id='nav-list'>
+            AppMenu
+            <ul>
+                <li>Home</li>
+            </ul>
+            <div id="menu-foreground" onClick={() => {setShowMenu(!showMenu)}}></div>
+        </div> 
     }
 
     

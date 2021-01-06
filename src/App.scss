@@ -16,8 +16,8 @@ body {
 }
 
 #nav-list {
-    list-style-type: none;
     margin: 0;
+    // padding: 5em;
     position: fixed;
     width: 80%;
     height: 100%;
@@ -25,11 +25,28 @@ body {
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    flex-direction: column;
     background-color: white;
 
-    li {
-        margin: 0;
-        padding: 1em;
+    ul {
+        list-style-type: none;
+        width: auto;
+
+        li {
+            margin: 0;
+            padding: 1em;
+        }
     }
+
+}
+
+#menu-foreground {
+    margin: 0;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.548);
 }
