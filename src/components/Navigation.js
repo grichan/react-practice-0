@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import {useTransition, animated} from 'react-spring'
+import { useTransition, animated } from 'react-spring'
+import { Link } from 'react-router-dom'
 
 function Navigation() {
 
@@ -34,7 +35,15 @@ function Navigation() {
                     <div>
                         AppMenu
                         <ul>
-                            <li>Home</li>
+                            <li>
+                                <Link to="/"> Home </Link>
+                            </li>
+                            <li>
+                                <Link to="/about"> About </Link>
+                            </li>
+                            <li>
+                                <Link to="/counter"> counter </Link>
+                            </li>
                         </ul>
                     </div> 
                 </animated.div>
