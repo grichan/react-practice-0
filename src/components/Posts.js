@@ -8,23 +8,36 @@ function Posts() {
     const url = 'https://jsonplaceholder.typicode.com/posts/' + id
     const [post, setPost] = useState({
         loading: false,
-        data: null
+        data: null,
+        error: false
     })
 
     useEffect(() => {
         setPost({
             loading: true,
-            data: null
+            data: null,
+            error: false
         })
         axios.get(url).then((response) => {
             setPost({
                 loading: false,
-                data: response.data
+                data: response.data,
+                error: false
+            })
+        }).catch((err) => {
+            setPost({
+                loading: false,
+                data: null,
+                error: true
             })
         })
     }, [url])
 
     let content = null
+
+    if(post.error){
+        content = <h1>Error occurred. </h1>
+    }
     
     if(post.loading){
         content = <Loader/>
