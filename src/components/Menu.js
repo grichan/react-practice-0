@@ -44,6 +44,9 @@ function Menu() {
                             <li>
                                 <Link to="/counter" onClick={() => {setShowMenu(false)}}> Counter </Link>
                             </li>
+                            <li>
+                                <Link to="/posts" onClick={() => {setShowMenu(false)}}> Posts </Link>
+                            </li>
                         </ul>
                     </div> 
                 </animated.div>

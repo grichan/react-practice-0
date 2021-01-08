@@ -3,6 +3,7 @@ import Counter from './components/Counter'
 import Header from './components/Header'
 import About from './components/About'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Posts from './components/Posts';
 
 function App() {  
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route exact path="/counter">
             <Counter />
+          </Route>
+          <Route exact path="/posts/:id">
+            <Posts />
           </Route>
         </Switch>
       </Router>
