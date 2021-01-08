@@ -1,28 +1,47 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import Loader from './Loader';
 
 function Posts() {
-    const url = 'https://jsonplaceholder.typicode.com/posts/1'
-    const [post, setPost] = useState(null)
+    const { id } = useParams()
+    const url = 'https://jsonplaceholder.typicode.com/posts/' + id
+    const [post, setPost] = useState({
+        loading: false,
+        data: null
+    })
 
     useEffect(() => {
+        setPost({
+            loading: true,
+            data: null
+        })
         axios.get(url).then((response) => {
-            setPost(response.data)
+            setPost({
+                loading: false,
+                data: response.data
+            })
         })
     }, [url])
 
-    if(post) {
-        console.log('post :>> ', post);
+    let content = null
+    
+    if(post.loading){
+        content = <Loader/>
+    }
+
+    if(post.data) {
+        console.log ('post :>> ', post);
         return (
             <div>
-                <h1> {post.title} </h1>
-                <p>{post.body}</p>
+                <h1> {post.data.title} </h1>
+                <p>{post.data.body}</p>
             </div>
         )
     }
 
     return (
-        <div></div>
+        <div>{content}</div>
     )
 } 
 
