@@ -4,6 +4,7 @@ import Header from './components/Header'
 import About from './components/About'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Posts from './components/Posts';
+import Home from './components/Home';
 
 function App() {  
   return (
@@ -12,7 +13,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            Welcome
+            <Home />
           </Route>
           <Route exact path="/about">
             <About />
