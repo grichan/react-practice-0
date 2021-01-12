@@ -2,36 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Loader from './Loader';
 import PostCard from './PostCard'
+import {useHttpRequests} from '../hooks/HttpRequests'
 
 function Home() {
     let content = null
     const url = 'https://jsonplaceholder.typicode.com/posts'
-    const [posts, setPosts] = useState({
-        loading: false,
-        data: null,
-        error: false
-    })
 
-    useEffect(() => {
-        setPosts({
-            loading: true,
-            data: null,
-            error: false
-        })
-        axios.get(url).then((response) => {
-            setPosts({
-                loading: false,
-                data: response.data,
-                error: false
-            })
-        }).catch((err) => {
-            setPosts({
-                loading: false,
-                data: null,
-                error: true
-            })
-        })
-    }, [url])
+    let posts = useHttpRequests(url)
 
     if(posts.error){
         content = <h1>Error occurred. </h1>
