@@ -24,14 +24,14 @@ function Home() {
         );
 
         return (
-            <div>
+            <div className='posts'>
                 {content}
             </div>
         )
     }
 
     return (
-        <div>{content}</div>
+        <div className='posts'>{content}</div>
     )
 }
 

@@ -47,6 +47,26 @@ body {
 
 }
 
+.posts{
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+
+  h1{
+    font-size: 1.5em;;
+  }
+
+}
+
+#post{
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+// navigation
 #menu-foreground {
     margin: 0;
     position: fixed;

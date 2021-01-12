@@ -23,7 +23,7 @@ function Posts() {
     if(post.data) {
         console.log ('post :>> ', post);
         return (
-            <div>
+            <div id="post" >
                 <h1> {post.data.title} </h1>
                 <p>{post.data.body}</p>
             </div>
