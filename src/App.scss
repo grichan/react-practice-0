@@ -86,6 +86,10 @@ $loader-duration-alt: $loader-duration / length($loader-colors);
 $loader-keyframe: 1 / (length($loader-colors) * 2) * 100;
 
 .loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;;
+  margin: auto;
   animation: loader-turn $loader-duration-alt linear infinite;
   padding: 1rem;
   max-width: 60px;
