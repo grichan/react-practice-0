@@ -3,6 +3,7 @@ import axios from 'axios'
 import Loader from './Loader';
 import PostCard from './PostCard'
 import {useHttpRequests} from '../hooks/HttpRequests'
+import store from '../store';
 
 function Home() {
     let content = null
@@ -19,6 +20,14 @@ function Home() {
     }
 
     if(posts.data) {
+
+        store.dispatch({
+            type: 'loadPosts',
+            payload: {
+                posts: posts.data
+            }
+        })
+
         content = posts.data.map((post, key) => 
             <PostCard post={post} />
         );
